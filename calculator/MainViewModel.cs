@@ -195,8 +195,7 @@ namespace calculator
 
         public string Error =>
             errorDictionary.Count(x => string.IsNullOrWhiteSpace(x.Value) == false) > 0
-                ? string.Join(Environment.NewLine, errorDictionary.Where(x => string.IsNullOrWhiteSpace(x.Value) == false).GetEnumerator().Current)
-                : null;
+                ? string.Join(Environment.NewLine, errorDictionary.Where(x => string.IsNullOrWhiteSpace(x.Value) == false)) : null;
 
         public string this[string columnName] => errorDictionary.ContainsKey(columnName) ? errorDictionary[columnName] : null;
 
